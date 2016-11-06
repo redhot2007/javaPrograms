@@ -1,4 +1,4 @@
-package com.java.models;
+package com.java.design.exception;
 
 
 

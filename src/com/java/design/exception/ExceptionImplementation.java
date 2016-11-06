@@ -1,8 +1,6 @@
-package com.java.programs;
+package com.java.design.exception;
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import com.java.models.ExceptionExample;
 
 public class ExceptionImplementation{
 	public static void testMethod(int i)throws ExceptionExample{
