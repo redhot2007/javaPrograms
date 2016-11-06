@@ -1,4 +1,4 @@
-package com.designPatterns.singleton;
+package com.java.design.scrabbler;
 
 public class ScrabbleThreads{
 	

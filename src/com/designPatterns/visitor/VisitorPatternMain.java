@@ -2,7 +2,7 @@ package com.designPatterns.visitor;
 
 import org.junit.Test;
 
-public class VisitorTest {
+public class VisitorPatternMain {
 
 	@Test
 	public void testVisitor() {

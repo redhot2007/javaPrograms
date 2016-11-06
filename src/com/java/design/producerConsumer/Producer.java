@@ -1,4 +1,4 @@
-package com.java.design.producerconsumer;
+package com.java.design.producerConsumer;
 
 public class Producer extends Thread {
 	private MessageQueue messageQueue;

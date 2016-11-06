@@ -1,4 +1,4 @@
-package com.designPatterns.singleton;
+package com.java.design.scrabbler;
 
 
 import java.util.Arrays;

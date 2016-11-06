@@ -1,8 +1,8 @@
-package com.java.design.producerconsumer;
+package com.java.design.producerConsumer;
 
 import org.junit.Test;
 
-public class ProducerConsumerTest {
+public class ProducerConsumerMain {
 	@Test
 	public void testProducerConsumer() {
 		MessageQueue c = new MessageQueue();

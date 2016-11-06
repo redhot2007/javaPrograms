@@ -1,4 +1,4 @@
-package com.java.design.producerconsumer;
+package com.java.design.producerConsumer;
 
 import java.util.LinkedList;
 import java.util.Queue;

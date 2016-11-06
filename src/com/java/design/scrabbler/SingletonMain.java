@@ -1,10 +1,10 @@
-package com.designPatterns.singleton;
+package com.java.design.scrabbler;
 
 import org.junit.Test;
 
 import java.util.LinkedList;
 
-public class ScrabbleTest {
+public class SingletonMain {
 	
 	public static void main(String[] args){
 		

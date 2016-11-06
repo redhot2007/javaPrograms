@@ -1,4 +1,4 @@
-package com.java.design.producerconsumer;
+package com.java.design.producerConsumer;
 
 public class Consumer extends Thread {
 	private MessageQueue cubbyhole;
