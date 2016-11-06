@@ -1,10 +1,10 @@
-package com.java.design.patterns.visitor;
+package com.designPatterns.visitor;
 
-class Necessity implements IVisitable {
+class Liquor implements IVisitable {
 	
 	private double price;
 
-	Necessity(double item) {
+	Liquor(double item) {
 		price = item;
 	}
 

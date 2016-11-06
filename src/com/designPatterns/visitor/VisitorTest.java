@@ -1,4 +1,4 @@
-package com.java.design.patterns.visitor;
+package com.designPatterns.visitor;
 
 import org.junit.Test;
 

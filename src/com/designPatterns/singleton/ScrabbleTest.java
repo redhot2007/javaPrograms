@@ -1,4 +1,4 @@
-package com.java.design.patterns.singleton;
+package com.designPatterns.singleton;
 
 import org.junit.Test;
 

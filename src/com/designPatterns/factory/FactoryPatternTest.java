@@ -1,4 +1,4 @@
-package com.java.design.patterns.factory;
+package com.designPatterns.factory;
 
 import org.junit.Test;
 
