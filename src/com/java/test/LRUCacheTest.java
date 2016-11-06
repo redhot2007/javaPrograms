@@ -3,7 +3,7 @@ package com.java.test;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.data.structures.LRUCache;
+import com.dataStructures.LRUCache;
 
 public class LRUCacheTest {
 	

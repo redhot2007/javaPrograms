@@ -1,4 +1,4 @@
-package com.data.structures;
+package com.dataStructures;
 
 public class HashMap {
 	private final static int TABLE_SIZE = 128;

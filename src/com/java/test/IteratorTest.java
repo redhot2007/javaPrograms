@@ -2,7 +2,7 @@ package com.java.test;
 
 import org.junit.Test;
 
-import com.data.structures.Iterator;
+import com.dataStructures.Iterator;
 
 public class IteratorTest{
 	@Test

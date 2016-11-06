@@ -1,4 +1,4 @@
-package com.data.structures;
+package com.dataStructures;
 
 public class Iterator implements java.util.Iterator<Integer>{
 

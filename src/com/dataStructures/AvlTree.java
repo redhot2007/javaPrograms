@@ -1,4 +1,4 @@
-package com.data.structures;
+package com.dataStructures;
 //package com.program.DataStructures;
 //
 //import com.program.models.TreesAndGraph.TreeNode;
