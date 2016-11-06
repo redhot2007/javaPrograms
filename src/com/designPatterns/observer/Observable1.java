@@ -1,0 +1,29 @@
+package com.designPatterns.observer;
+
+import java.util.Observable;
+import java.util.Random;
+
+public class Observable1 extends Observable implements Runnable{
+
+	private int counter = 0;
+	private int sleep;
+	
+	public void setSleep(int sleep){
+		this.sleep= sleep;
+	}
+
+	@Override
+	public void run() {
+		counter++;
+		try {
+			Thread.sleep(sleep);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		setChanged();
+		notifyObservers(counter);
+		
+	}
+
+}
