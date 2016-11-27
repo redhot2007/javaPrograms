@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
+import org.junit.Test;
+
 import com.java.models.ITemplate;
 import com.java.models.puzzles.Fraction;
 import com.java.models.puzzles.Interval;
@@ -22,7 +24,19 @@ import com.java.models.puzzles.MaxSubArrayResultNode;
 import com.java.programs.StringsAndArrays;
 
 public class Puzzles implements ITemplate {
-
+	@Test		
+	public void test(){		
+		List<String> list = new ArrayList<String>();		
+		StringBuilder sb = new StringBuilder();		
+		helper(list, sb);		
+		System.out.println(list.get(0));		
+		System.out.println(sb.toString());		
+	}		
+	private void helper(List<String> list, StringBuilder sb) {		
+		list.add("abc");		
+		sb.append("abc");		
+				
+	}
 	/**
 	 * Given two binary strings, return their sum (also a binary string).
 	 * 
@@ -1732,7 +1746,19 @@ public class Puzzles implements ITemplate {
 		}
 		return isNegative * reverse;
 	}
-
+	public int reverseTheNumber_2(int x) {		
+		long result = 0;		
+		boolean isNegative = x < 0;		
+		x = isNegative ? x * -1 : x;		
+		int divider = 10;		
+		while (x > 0) {		
+			result = result * 10 + x % divider;		
+			x = x / divider;		
+		}		
+		result = result > Integer.MAX_VALUE ? 0 : result;		
+		result = isNegative ? result * -1 : result;		
+		return (int) result;		
+	}
 	/**
 	 * Given a number, represent it in sum of squares <b><br>
 	 * <br>
@@ -2167,7 +2193,22 @@ public class Puzzles implements ITemplate {
 		vol += getVolume(height, boundary[0] - 1, boundary, false);
 		return vol;
 	}
-
+	public int trappedWaterVolume_2(int[] h) {		
+        if( null == h || h.length < 3) return 0;		
+        int leftMax =0;		
+        int rightMax[] = new int[h.length];		
+        int max = 0;		
+        for( int i=h.length-1;i>=0;i--){		
+            max = Math.max(max,h[i]);		
+            rightMax[i] = max;		
+        }		
+        int result=0;		
+        for( int i=0;i < h.length; i++){		
+            leftMax = Math.max(leftMax,h[i]);		
+            result = result + Math.max(Math.min(leftMax,rightMax[i])-h[i],0);		
+        }		
+        return result;		
+    }
 	private int getVolume(int[] a, int end, int[] boundary, boolean isForward) {
 		// if it is forward, the start point should be 0, else it should be end
 		// of array

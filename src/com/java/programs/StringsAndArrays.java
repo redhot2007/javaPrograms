@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Stack;
 
 import com.java.models.ITemplate;
@@ -632,7 +633,110 @@ public class StringsAndArrays implements ITemplate {
 			}
 		}
 	}
+	
+	/**
+	 * Longest Substring Without Repeating Characters
+	 * 
+	 * Given a string, find the length of the longest substring without
+	 * repeating characters.
+	 * 
+	 * Examples:
+	 * 
+	 * Given "abcabcbb", the answer is "abc", which the length is 3.
+	 * 
+	 * Given "bbbbb", the answer is "b", with the length of 1.
+	 * 
+	 * Given "pwwkew", the answer is "wke", with the length of 3. Note that the
+	 * answer must be a substring, "pwke" is a subsequence and not a substring.
+	 * 
+	 * 
+	 * @param s
+	 * @return
+	 */
+    public int lengthOfLongestSubstring(String s) {
+        int max =0, start = 0, end=0;
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        while(end < s.length()){
+        	// why second condition is >= instead of > - example "aa"
+            if(map.containsKey((int)s.charAt(end)) && map.get((int)s.charAt(end)) >= start){
+                max = max > end- start ? max: end -start;
+                start = map.get((int)s.charAt(end))+1;
+            }else{
+                map.put((int)s.charAt(end),end++);
+            }
+        }
+        max = max > end- start ? max: end -start;
+        return max;
+    }
+    
+	/**
+	 * Median of Two Sorted Arrays
+	 * 
+	 * There are two sorted arrays nums1 and nums2 of size m and n respectively.
+	 * 
+	 * Find the median of the two sorted arrays. The overall run time complexity
+	 * should be O(log (m+n)). 
+	 * 
+	 * 
+	 * Example 1: nums1 = [1, 3] nums2 = [2]. The median is 2.0 
+	 * Example 2: nums1 = [1, 2] nums2 = [3, 4]. The median is (2 + 3)/2 = 2.5
+	 * 
+	 * 
+	 * @param nums1
+	 * @param nums2
+	 * @return
+	 */
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+    	// note the run time shud be log(m+n). for o(m+n), we can just do merge and find the middle element
+        Integer l1=0;
+        Integer l2=0;
+        Integer r=0;
+        Integer mLength= nums1.length+nums2.length;
+        boolean odd = mLength%2 == 1;
+        Integer medianIndex = odd? mLength/2: (mLength/2)-1;
+        Integer mid;
+        while(r <= medianIndex ){
+            if(l1 < nums1.length && l2 < nums2.length){
+                mid = nums1[l1] < nums2[l2]?nums1[l1++]:nums2[l2++];
+            }else if(l1 < nums1.length){
+                 mid = nums1[l1++];
+            }else{
+                 mid = nums2[l2++];
+            }
+            if( r== medianIndex){
+                if(odd){
+                    return mid;
+                }
+                else{
+                    Integer temp;
+                    if(l1 < nums1.length && l2 < nums2.length){
+                        temp = nums1[l1] < nums2[l2]?nums1[l1++]:nums2[l2++];
+                    }else if(l1 < nums1.length){
+                        temp = nums1[l1++];
+                    }else{
+                        temp = nums2[l2++];
+                    }
+                    return (temp+mid)/2.0;
+                }
+            }
+            r++;
+            
+        }
+        // dummy return statement
+        return 0;
+    }
+    
+    private void findnextSmallest(Integer l1,Integer l2, Integer mid, int[] nums1, int[] nums2){
+        if(l1 < nums1.length && l2 < nums2.length){
+            mid = nums1[l1] < nums2[l2]?nums1[l1++]:nums2[l2++];
+        }else if(l1 < nums1.length){
+             mid = nums1[l1++];
+        }else{
+             mid = nums2[l2++];
+        }
 
+    }
+    
 	public int lengthOfLastWord(String s) {
 		if (s == null || s.length() == 0)
 			return 0;

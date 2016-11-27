@@ -36,7 +36,7 @@ public class MainFunction {
 		//		ThreadImplementation.vectorWithoutSynchronized();
 		//		ThreadImplementation.arrayListWithSynchronized();
 		//		ThreadImplementation.arrayListWithReentrantLock();
-		ThreadImplementation.printAB();
+		ThreadConcepts.printAB();
 		//		ProducerConsumerSolution.deployProducerComsumerThreads();
 	}
 
